@@ -1,4 +1,10 @@
-pragma solidity 0.6.12;
+/**
+ *Submitted for verification at BscScan.com on 2021-01-27
+*/
+
+// SPDX-License-Identifier: MIT
+
+pragma solidity 0.7.6;
 
 interface IBEP20 {
   /**
@@ -104,7 +110,7 @@ interface IBEP20 {
 contract Context {
   // Empty internal constructor, to prevent people from mistakenly deploying
   // an instance of this contract, which should be used via inheritance.
-  constructor () internal { }
+  constructor () { }
 
   function _msgSender() internal view returns (address payable) {
     return msg.sender;
@@ -285,7 +291,7 @@ contract Ownable is Context {
   /**
    * @dev Initializes the contract setting the deployer as the initial owner.
    */
-  constructor () internal {
+  constructor () {
     address msgSender = _msgSender();
     _owner = msgSender;
     emit OwnershipTransferred(address(0), msgSender);
@@ -348,7 +354,7 @@ contract SHIELDToken is Context, IBEP20, Ownable {
   string public _symbol;
   string public _name;
 
-  constructor() public {
+  constructor() {
     _name = "Shield Protocol";
     _symbol = "SHIELD";
     _decimals = 18;
