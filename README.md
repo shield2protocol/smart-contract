@@ -1,4 +1,4 @@
-# smart-contract
+# SMART-CONTRACT
 
 # Ethereum Smart Contract Address:  0x40f0b7e5deee3982d945a447a142c5d4e6058791
 
