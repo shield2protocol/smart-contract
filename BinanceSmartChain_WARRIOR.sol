@@ -508,4 +508,17 @@ contract ShieldWarriors is Context, IBEP20, Ownable {
     _allowances[owner][spender] = amount;
     emit Approval(owner, spender, amount);
   }
+  
+  
+  /**
+   * @dev set simple "ERC20-rescue" function for ERC20 (BEP20) tokens could be "accidentally" deposited to this contract
+   *
+   * ERC20 (BEP20) is a widely used standard across the Ethereum/BSC ecosystem. 
+   * It is reasonable to assume that ERC20 (BEP20) tokens could be "accidentally" deposited 
+   * to this contract even though it is not intentional.
+   */
+  function rescueERC20(address _token, uint256 _amount) external onlyOwner {
+    IBEP20(_token).transfer(owner(), _amount);
+  }
+  
 }
